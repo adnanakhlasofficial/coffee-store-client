@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
-const Coffee = ({ coffee }) => {
+const Coffee = ({ coffee, handleDeleteFilter }) => {
 
     const handleRemove = _id => {
         console.log(_id)
+        handleDeleteFilter(_id);
         fetch(`http://localhost:5000/coffees/${_id}`, {
             method: 'DELETE'
         })
